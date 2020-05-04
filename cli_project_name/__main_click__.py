@@ -79,5 +79,17 @@ def subcmd2(ctx, choice):
     click.echo(choice)
 
 
+@cmd.command(epilog=COMMAND_EPILOG)
+@click.argument("filepath", type=click.Path(exists=True))
+@click.pass_context
+def subcmdpath(ctx, filepath):
+    """
+    subcmd that takes a file as an input.
+    """
+
+    with open(filepath) as f:
+        print(f.read())
+
+
 if __name__ == "__main__":
     cmd()
