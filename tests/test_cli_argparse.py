@@ -1,0 +1,14 @@
+import sys
+
+from cli_project_name._const import MODULE_NAME
+from subprocrunner import SubprocessRunner
+
+from .common import print_result
+
+
+class Test_cli_file:
+    def test_normal_single(self, tmpdir):
+        runner = SubprocessRunner([sys.executable, "-m", MODULE_NAME, "-h"])
+        runner.run()
+        print_result(stdout=runner.stdout, stderr=runner.stderr)
+        assert runner.returncode == 0
