@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from enum import Enum, unique
+from textwrap import dedent
 
 import click
 
@@ -9,6 +10,11 @@ from ._const import MODULE_NAME, LogLevel
 from ._logger import initialize_logger
 
 
+COMMAND_EPILOG = dedent(
+    """\
+    Issue tracker: https://github.com/:owner/:repo/issues
+    """
+)
 CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"], obj={})
 
 
@@ -35,7 +41,7 @@ def cmd(ctx, log_level: str, verbosity_level: int):
     ctx.obj[Context.VERBOSITY_LEVEL] = verbosity_level
 
 
-@cmd.command()
+@cmd.command(epilog=COMMAND_EPILOG)
 @click.pass_context
 @click.argument("filepaths", type=str, nargs=-1)
 @click.option("--flag", "is_flag", is_flag=True, help="")
@@ -49,7 +55,7 @@ def subcmd1(ctx, filepaths, is_flag):
         click.echo(filepath)
 
 
-@cmd.command()
+@cmd.command(epilog=COMMAND_EPILOG)
 @click.pass_context
 @click.argument("choices", type=click.Choice(["hoge", "foo"]))
 def subcmd2(ctx, choice):
