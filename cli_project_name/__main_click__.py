@@ -37,6 +37,10 @@ class Context(Enum):
 @click.option("-v", "--verbose", "verbosity_level", count=True)
 @click.pass_context
 def cmd(ctx, log_level: str, verbosity_level: int):
+    """
+    common cmd help
+    """
+
     ctx.obj[Context.LOG_LEVEL] = LogLevel.INFO if log_level is None else log_level
     ctx.obj[Context.VERBOSITY_LEVEL] = verbosity_level
 
@@ -46,6 +50,10 @@ def cmd(ctx, log_level: str, verbosity_level: int):
 @click.argument("filepaths", type=str, nargs=-1)
 @click.option("--flag", "is_flag", is_flag=True, help="")
 def subcmd1(ctx, filepaths, is_flag):
+    """
+    subcmd1 help
+    """
+
     log_level = ctx.obj[Context.LOG_LEVEL]
     verbosity_level = ctx.obj[Context.VERBOSITY_LEVEL]
 
@@ -59,6 +67,10 @@ def subcmd1(ctx, filepaths, is_flag):
 @click.pass_context
 @click.argument("choices", type=click.Choice(["hoge", "foo"]))
 def subcmd2(ctx, choice):
+    """
+    subcmd2 help
+    """
+
     log_level = ctx.obj[Context.LOG_LEVEL]
     verbosity_level = ctx.obj[Context.VERBOSITY_LEVEL]
 
