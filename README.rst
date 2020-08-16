@@ -13,7 +13,7 @@ Python CLI project template: getting started
 If you would like to use `click <https://palletsprojects.com/p/click/>`__ framework, reaname ``<cli_project_name>/__main_click__.py`` to ``<cli_project_name>/__main__.py``
 
 
-Repated Project
+Related Project
 =========================================================
 - `thombashi/python-lib-project-template <https://github.com/thombashi/python-lib-project-template>`__
 
