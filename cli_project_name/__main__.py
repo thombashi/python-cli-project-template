@@ -30,15 +30,23 @@ def parse_option() -> argparse.Namespace:
     use_stdin, found_stdin_specifier = is_use_stdin()
     if not use_stdin or found_stdin_specifier:
         parser.add_argument(
-            "values", nargs="+", help="'-' for read from the standard input.",
+            "values",
+            nargs="+",
+            help="'-' for read from the standard input.",
         )
 
     group = parser.add_argument_group("Group")  # type: ignore
     group.add_argument(
-        "--choices", choices=["a", "b"], default="a", help="",
+        "--choices",
+        choices=["a", "b"],
+        default="a",
+        help="",
     )
     group.add_argument(
-        "--flag", action="store_true", default=False, help="",
+        "--flag",
+        action="store_true",
+        default=False,
+        help="",
     )
 
     loglevel_dest = "log_level"

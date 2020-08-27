@@ -1,7 +1,8 @@
 import sys
 
-from cli_project_name._const import MODULE_NAME
 from subprocrunner import SubprocessRunner
+
+from cli_project_name._const import MODULE_NAME
 
 from .common import print_result
 
