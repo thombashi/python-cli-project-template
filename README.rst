@@ -14,7 +14,7 @@ If you would like to use `click <https://palletsprojects.com/p/click/>`__ framew
 
 
 Related Project
-=========================================================
+---------------------------------------------------------
 - `thombashi/python-lib-project-template <https://github.com/thombashi/python-lib-project-template>`__
 
 
@@ -42,6 +42,13 @@ Summary
     :alt: Test coverage: codecov
 
 
+Installation
+============================================
+::
+
+    pip install <cli_project_name>
+
+
 Usage
 ============================================
 
@@ -54,13 +61,6 @@ Usage
     .. code-block::
 
         # Output
-
-
-Installation
-============================================
-::
-
-    pip install <cli_project_name>
 
 
 Dependencies
