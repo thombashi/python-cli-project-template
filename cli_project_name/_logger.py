@@ -1,6 +1,12 @@
 import sys
 
-from ._const import MODULE_NAME, LogLevel
+from ._const import MODULE_NAME
+
+
+class LogLevel:
+    DEBUG = "DEBUG"
+    INFO = "INFO"
+    QUIET = "QUIET"
 
 
 class NullLogger:

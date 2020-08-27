@@ -6,8 +6,8 @@ from textwrap import dedent
 import click
 
 from .__version__ import __version__
-from ._const import MODULE_NAME, LogLevel
-from ._logger import initialize_logger
+from ._const import MODULE_NAME
+from ._logger import LogLevel, initialize_logger
 
 
 COMMAND_EPILOG = dedent(
