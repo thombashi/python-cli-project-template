@@ -8,7 +8,7 @@ from .common import print_result
 
 
 class Test_cli:
-    def test_normal_single(self, tmpdir):
+    def test_help(self, tmpdir):
         runner = SubprocessRunner([sys.executable, "-m", MODULE_NAME, "-h"])
         runner.run()
         print_result(stdout=runner.stdout, stderr=runner.stderr)
