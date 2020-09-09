@@ -44,6 +44,8 @@ def cmd(ctx, log_level: str, verbosity_level: int):
     ctx.obj[Context.LOG_LEVEL] = LogLevel.INFO if log_level is None else log_level
     ctx.obj[Context.VERBOSITY_LEVEL] = verbosity_level
 
+    initialize_logger(name="{:s} subcmd1".format(MODULE_NAME), log_level=ctx.obj[Context.LOG_LEVEL])
+
 
 @cmd.command(epilog=COMMAND_EPILOG)
 @click.pass_context
@@ -54,10 +56,7 @@ def subcmd1(ctx, filepaths, is_flag):
     subcmd1 help
     """
 
-    log_level = ctx.obj[Context.LOG_LEVEL]
     verbosity_level = ctx.obj[Context.VERBOSITY_LEVEL]
-
-    initialize_logger(name="{:s} subcmd1".format(MODULE_NAME), log_level=ctx.obj[Context.LOG_LEVEL])
 
     for filepath in filepaths:
         click.echo(filepath)
@@ -71,10 +70,7 @@ def subcmd2(ctx, choice):
     subcmd2 help
     """
 
-    log_level = ctx.obj[Context.LOG_LEVEL]
     verbosity_level = ctx.obj[Context.VERBOSITY_LEVEL]
-
-    initialize_logger(name="{:s} subcmd2".format(MODULE_NAME), log_level=ctx.obj[Context.LOG_LEVEL])
 
     click.echo(choice)
 
