@@ -17,3 +17,11 @@ class Test_click:
         runner = CliRunner()
         result = runner.invoke(cmd, options)
         assert result.exit_code == expected
+
+
+class Test_click_version:
+    def test_smoke(self):
+        runner = CliRunner()
+        result = runner.invoke(cmd, ["version"])
+        assert result.exit_code == 0
+        assert len(result.stdout) > 30

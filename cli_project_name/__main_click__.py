@@ -49,6 +49,18 @@ def cmd(ctx, log_level: str, verbosity_level: int):
 
 @cmd.command(epilog=COMMAND_EPILOG)
 @click.pass_context
+def version(ctx):
+    """
+    Show version information
+    """
+
+    import envinfopy
+
+    click.echo(envinfopy.dumps(["cli_project_name"], "markdown"))
+
+
+@cmd.command(epilog=COMMAND_EPILOG)
+@click.pass_context
 @click.argument("filepaths", type=str, nargs=-1)
 @click.option("--flag", "is_flag", is_flag=True, help="")
 def subcmd1(ctx, filepaths, is_flag):
