@@ -38,7 +38,7 @@ Summary
     :alt: Test coverage: coveralls
 
 .. image:: https://codecov.io/gh/thombashi/python-cli-project-template/branch/master/graph/badge.svg
-  :target: https://codecov.io/gh/thombashi/python-cli-project-template
+    :target: https://codecov.io/gh/thombashi/python-cli-project-template
     :alt: Test coverage: codecov
 
 
