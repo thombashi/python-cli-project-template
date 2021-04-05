@@ -40,7 +40,7 @@ def parse_option() -> argparse.Namespace:
         "--choices",
         choices=["a", "b"],
         default="a",
-        help="",
+        help="defaults to %(default)s",
     )
     group.add_argument(
         "--flag",
