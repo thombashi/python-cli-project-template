@@ -25,21 +25,13 @@ README
 Summary
 ============================================
 
-.. image:: https://img.shields.io/travis/thombashi/python-cli-project-template/master.svg?label=Linux/macOS%20CI
-    :target: https://travis-ci.org/thombashi/python-cli-project-template
-    :alt: Linux/macOS CI status
-
-.. image:: https://img.shields.io/appveyor/ci/thombashi/python-cli-project-template/master.svg?label=Windows%20CI
-    :target: https://ci.appveyor.com/project/thombashi/python-cli-project-template/branch/master
-    :alt: Windows CI status
+.. image:: https://github.com/thombashi/python-cli-project-template/workflows/Tests/badge.svg
+    :target: https://github.com/thombashi/python-cli-project-template/actions?query=workflow%3ATests
+    :alt: Linux/macOS/Windows CI status
 
 .. image:: https://coveralls.io/repos/github/thombashi/python-cli-project-template/badge.svg?branch=master
     :target: https://coveralls.io/github/thombashi/python-cli-project-template?branch=master
     :alt: Test coverage: coveralls
-
-.. image:: https://codecov.io/gh/thombashi/python-cli-project-template/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/thombashi/python-cli-project-template
-    :alt: Test coverage: codecov
 
 
 Installation
