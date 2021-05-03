@@ -44,7 +44,7 @@ def cmd(ctx, log_level: str, verbosity_level: int):
     ctx.obj[Context.LOG_LEVEL] = LogLevel.INFO if log_level is None else log_level
     ctx.obj[Context.VERBOSITY_LEVEL] = verbosity_level
 
-    initialize_logger(name="{:s}".format(MODULE_NAME), log_level=ctx.obj[Context.LOG_LEVEL])
+    initialize_logger(name=f"{MODULE_NAME:s}", log_level=ctx.obj[Context.LOG_LEVEL])
 
 
 @cmd.command(epilog=COMMAND_EPILOG)

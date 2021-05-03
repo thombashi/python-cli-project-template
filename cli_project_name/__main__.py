@@ -23,9 +23,7 @@ def parse_option() -> argparse.Namespace:
             """
         ),
     )
-    parser.add_argument(
-        "-V", "--version", action="version", version="%(prog)s {}".format(__version__)
-    )
+    parser.add_argument("-V", "--version", action="version", version=f"%(prog)s {__version__}")
 
     use_stdin, found_stdin_specifier = is_use_stdin()
     if not use_stdin or found_stdin_specifier:
@@ -90,7 +88,7 @@ def main() -> int:
     if not use_stdin and not found_stdin_specifier:
         print("command template for argparse")
     else:
-        print("input from stdin: {}".format(sys.stdin.read()))
+        print(f"input from stdin: {sys.stdin.read()}")
 
     return 0
 
