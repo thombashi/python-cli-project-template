@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from enum import Enum, unique
+from enum import Enum, auto, unique
 from textwrap import dedent
 
 import click
@@ -20,8 +20,8 @@ CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"], obj={})
 
 @unique
 class Context(Enum):
-    LOG_LEVEL = 0
-    VERBOSITY_LEVEL = 1
+    LOG_LEVEL = auto()
+    VERBOSITY_LEVEL = auto()
 
 
 @click.group(context_settings=CONTEXT_SETTINGS)
