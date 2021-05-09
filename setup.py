@@ -72,7 +72,7 @@ setuptools.setup(
     entry_points={
         "console_scripts": [
             "cli_project_name=cli_project_name.__main__:main",
-            # "cli_project_name=cli_project_name.__main__:cmd",  # comment in when using click
+            #"cli_project_name=cli_project_name.__main_click__:cmd",  # comment in when using click
         ]
     },
 )
