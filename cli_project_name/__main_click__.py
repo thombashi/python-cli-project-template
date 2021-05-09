@@ -76,8 +76,9 @@ def subcmd_flag(ctx, filepaths, is_flag):
 
 @cmd.command(epilog=COMMAND_EPILOG)
 @click.pass_context
-@click.argument("choices", type=click.Choice(["hoge", "foo"]))
-def subcmd_choice(ctx, choice: str, opt_choices: str):
+@click.argument("choice", type=click.Choice(["hoge", "foo"]))
+@click.option("--opt-choice", type=click.Choice(["hoge", "foo"]))
+def subcmd_choice(ctx, choice: str, opt_choice: str):
     """
     demo for click.Choice.
     """
@@ -85,6 +86,7 @@ def subcmd_choice(ctx, choice: str, opt_choices: str):
     verbosity_level = ctx.obj[Context.VERBOSITY_LEVEL]
 
     click.echo(choice)
+    click.echo(opt_choice)
 
 
 @cmd.command(epilog=COMMAND_EPILOG)
