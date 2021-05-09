@@ -29,10 +29,6 @@ Summary
     :target: https://github.com/thombashi/python-cli-project-template/actions?query=workflow%3ATests
     :alt: Linux/macOS/Windows CI status
 
-.. image:: https://coveralls.io/repos/github/thombashi/python-cli-project-template/badge.svg?branch=master
-    :target: https://coveralls.io/github/thombashi/python-cli-project-template?branch=master
-    :alt: Test coverage: coveralls
-
 
 Installation
 ============================================
