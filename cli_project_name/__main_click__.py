@@ -65,7 +65,7 @@ def version(ctx):
 @click.option("--flag", "is_flag", is_flag=True, help="")
 def subcmd_flag(ctx, filepaths, is_flag):
     """
-    subcmd1 help
+    demo for flag options.
     """
 
     verbosity_level = ctx.obj[Context.VERBOSITY_LEVEL]
@@ -79,7 +79,7 @@ def subcmd_flag(ctx, filepaths, is_flag):
 @click.argument("choices", type=click.Choice(["hoge", "foo"]))
 def subcmd_choice(ctx, choice: str, opt_choices: str):
     """
-    subcmd2 help
+    demo for click.Choice.
     """
 
     verbosity_level = ctx.obj[Context.VERBOSITY_LEVEL]
