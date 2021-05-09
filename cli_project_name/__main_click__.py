@@ -63,7 +63,7 @@ def version(ctx):
 @click.pass_context
 @click.argument("filepaths", type=str, nargs=-1)
 @click.option("--flag", "is_flag", is_flag=True, help="")
-def subcmd1(ctx, filepaths, is_flag):
+def subcmd_flag(ctx, filepaths, is_flag):
     """
     subcmd1 help
     """
@@ -77,7 +77,7 @@ def subcmd1(ctx, filepaths, is_flag):
 @cmd.command(epilog=COMMAND_EPILOG)
 @click.pass_context
 @click.argument("choices", type=click.Choice(["hoge", "foo"]))
-def subcmd2(ctx, choice):
+def subcmd_choice(ctx, choice: str, opt_choices: str):
     """
     subcmd2 help
     """
@@ -90,7 +90,7 @@ def subcmd2(ctx, choice):
 @cmd.command(epilog=COMMAND_EPILOG)
 @click.argument("filepath", type=click.Path(exists=True))
 @click.pass_context
-def subcmdpath(ctx, filepath):
+def subcmd_path(ctx, filepath):
     """
     subcmd that takes a file as an input.
     """
