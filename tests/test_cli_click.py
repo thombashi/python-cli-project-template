@@ -9,8 +9,9 @@ class Test_click:
         ["options", "expected"],
         [
             [["-h"], 0],
-            [["subcmd1", "-h"], 0],
-            [["subcmd2", "-h"], 0],
+            [["subcmd-flag", "-h"], 0],
+            [["subcmd-choice", "-h"], 0],
+            [["subcmd-path", "-h"], 0],
         ],
     )
     def test_help(self, options, expected):
