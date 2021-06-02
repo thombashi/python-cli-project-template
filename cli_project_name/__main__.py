@@ -24,6 +24,7 @@ def parse_option() -> argparse.Namespace:
         ),
     )
     parser.add_argument("-V", "--version", action="version", version=f"%(prog)s {__version__}")
+    parser.add_argument("-v", "--verbose", dest="verbosity_level", action="count", default=0)
 
     use_stdin, found_stdin_specifier = is_use_stdin()
     if not use_stdin or found_stdin_specifier:
