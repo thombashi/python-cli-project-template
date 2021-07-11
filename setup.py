@@ -71,8 +71,9 @@ setuptools.setup(
     zip_safe=False,
     entry_points={
         "console_scripts": [
+            # Remove entry points at below if unnecessary
             "cli_project_name=cli_project_name.__main__:main",
-            #"cli_project_name=cli_project_name.__main_click__:cmd",  # comment in when using click
+            "cli_project_name_click=cli_project_name.__main_click__:cmd",
         ]
     },
 )
