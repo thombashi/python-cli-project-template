@@ -56,7 +56,13 @@ def version(ctx):
 
     import envinfopy
 
-    click.echo(envinfopy.dumps(["cli_project_name"], "markdown"))
+    click.echo(
+        envinfopy.dumps(
+            ["cli_project_name"],
+            format="markdown",
+            verbosity_level=ctx.obj[Context.VERBOSITY_LEVEL],
+        )
+    )
 
 
 @cmd.command(epilog=COMMAND_EPILOG)
