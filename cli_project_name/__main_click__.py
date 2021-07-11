@@ -2,12 +2,13 @@
 
 from enum import Enum, auto, unique
 from textwrap import dedent
+from typing import Optional
 
 import click
 
 from .__version__ import __version__
 from ._const import MODULE_NAME
-from ._logger import LogLevel, initialize_logger
+from ._logger import LogLevel, initialize_logger, logger
 
 
 COMMAND_EPILOG = dedent(
@@ -35,8 +36,9 @@ class Context(Enum):
     help="Suppress execution log messages.",
 )
 @click.option("-v", "--verbose", "verbosity_level", count=True)
+@click.option("--profile", is_flag=True, help="Show profile.")
 @click.pass_context
-def cmd(ctx, log_level: str, verbosity_level: int):
+def cmd(ctx, log_level: str, verbosity_level: int, profile: Optional[int]):
     """
     common cmd help
     """
@@ -45,6 +47,24 @@ def cmd(ctx, log_level: str, verbosity_level: int):
     ctx.obj[Context.VERBOSITY_LEVEL] = verbosity_level
 
     initialize_logger(name=f"{MODULE_NAME:s}", log_level=ctx.obj[Context.LOG_LEVEL])
+
+    if profile:
+        import atexit
+        import sys
+
+        from pyinstrument import Profiler
+
+        profiler = Profiler()
+        profiler.start()
+
+        logger.debug("start profiling...")
+
+        def exit_profile():
+            logger.debug("profiling completed")
+            profiler.stop()
+            print(profiler.output_text(unicode=True, color=True), file=sys.stderr)
+
+        atexit.register(exit_profile)
 
 
 @cmd.command(epilog=COMMAND_EPILOG)
