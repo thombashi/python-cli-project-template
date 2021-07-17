@@ -25,9 +25,9 @@ README
 Summary
 ============================================
 
-.. image:: https://github.com/thombashi/python-cli-project-template/workflows/Tests/badge.svg
-    :target: https://github.com/thombashi/python-cli-project-template/actions?query=workflow%3ATests
-    :alt: Linux/macOS/Windows CI status
+.. image:: https://github.com/thombashi/python-cli-project-template/actions/workflows/lint_and_test.yml/badge.svg
+    :target: https://github.com/thombashi/python-cli-project-template/actions/workflows/lint_and_test.yml
+    :alt: CI status of Linux/macOS/Windows
 
 
 Installation
