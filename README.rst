@@ -29,6 +29,10 @@ Summary
     :target: https://github.com/thombashi/python-cli-project-template/actions/workflows/lint_and_test.yml
     :alt: CI status of Linux/macOS/Windows
 
+.. image:: https://github.com/thombashi/python-cli-project-template/actions/workflows/codeql-analysis.yml/badge.svg
+    :target: https://github.com/thombashi/python-cli-project-template/actions/workflows/codeql-analysis.yml
+    :alt: CodeQL
+
 
 Installation
 ============================================
