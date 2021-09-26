@@ -54,6 +54,8 @@ jobs:
             python-version: pypy3
           - os: windows-latest
             python-version: pypy3
+          - os: windows-latest
+            python-version: 3.6
     timeout-minutes: 20
 
     steps:
