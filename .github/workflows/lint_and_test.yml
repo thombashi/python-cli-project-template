@@ -12,6 +12,7 @@ jobs:
       group: ${{ github.workflow }}-${GITHUB_JOB}
       cancel-in-progress: true
     timeout-minutes: 20
+
     steps:
       - uses: actions/checkout@v2
 
@@ -47,6 +48,11 @@ jobs:
   unit-test:
     runs-on: ${{ matrix.os }}
     permissions: read-all
+    concurrency:
+      group: ${{ github.workflow }}-${{ matrix.os }}-${{ matrix.python-version }}
+      cancel-in-progress: true
+    timeout-minutes: 20
+
     strategy:
       fail-fast: false
       matrix:
@@ -59,10 +65,7 @@ jobs:
             python-version: pypy3
           - os: windows-latest
             python-version: "3.6"
-    concurrency:
-      group: ${{ github.workflow }}-${{ matrix.os }}-${{ matrix.python-version }}
-      cancel-in-progress: true
-    timeout-minutes: 20
+
     steps:
       - uses: actions/checkout@v2
 
