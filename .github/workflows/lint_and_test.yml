@@ -5,6 +5,7 @@ on: [push, pull_request]
 jobs:
   lint:
     runs-on: ubuntu-latest
+    permissions: read-all
     env:
       python-version: "3.8"
     concurrency:
@@ -45,6 +46,7 @@ jobs:
 
   unit-test:
     runs-on: ${{ matrix.os }}
+    permissions: read-all
     strategy:
       fail-fast: false
       matrix:
