@@ -9,7 +9,7 @@ jobs:
     env:
       python-version: "3.8"
     concurrency:
-      group: ${{ github.workflow }}-${GITHUB_JOB}
+      group: ${{ github.workflow }}-${{ github.job }}
       cancel-in-progress: true
     timeout-minutes: 20
 
@@ -49,7 +49,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     permissions: read-all
     concurrency:
-      group: ${{ github.workflow }}-${{ matrix.os }}-${{ matrix.python-version }}
+      group: ${{ github.workflow }}-${{ github.job }}-${{ matrix.os }}-${{ matrix.python-version }}
       cancel-in-progress: true
     timeout-minutes: 20
 
