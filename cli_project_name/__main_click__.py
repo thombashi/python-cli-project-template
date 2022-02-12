@@ -89,12 +89,15 @@ def version(ctx):
 @click.pass_context
 @click.argument("filepaths", type=str, nargs=-1)
 @click.option("--flag", "is_flag", is_flag=True, help="")
-def subcmd_flag(ctx, filepaths, is_flag):
+@click.option("--abc/--no-abc", default=False)
+def subcmd_flag(ctx, filepaths, is_flag, abc):
     """
-    demo for flag options.
+    Demonstrate flag options.
     """
 
     verbosity_level = ctx.obj[Context.VERBOSITY_LEVEL]
+
+    logger.debug(f"is_flag={is_flag}, abc={abc} verbosity_level: {verbosity_level}")
 
     for filepath in filepaths:
         click.echo(filepath)
@@ -106,10 +109,12 @@ def subcmd_flag(ctx, filepaths, is_flag):
 @click.option("--opt-choice", type=click.Choice(["hoge", "foo"]))
 def subcmd_choice(ctx, choice: str, opt_choice: str):
     """
-    demo for click.Choice.
+    Demonstrate click.Choice type.
     """
 
     verbosity_level = ctx.obj[Context.VERBOSITY_LEVEL]
+
+    logger.debug(f"choice={choice}, opt_choice={opt_choice} verbosity_level: {verbosity_level}")
 
     click.echo(choice)
     click.echo(opt_choice)
@@ -120,7 +125,7 @@ def subcmd_choice(ctx, choice: str, opt_choice: str):
 @click.pass_context
 def subcmd_path(ctx, filepath):
     """
-    subcmd that takes a file as an input.
+    Demonstrate subcommand that takes a file as an input.
     """
 
     with open(filepath) as f:
