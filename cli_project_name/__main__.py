@@ -9,7 +9,7 @@ from typing import Tuple
 
 from .__version__ import __version__
 from ._const import MODULE_NAME
-from ._logger import LogLevel, initialize_logger
+from ._logger import LogLevel, initialize_logger, logger
 
 
 def parse_option() -> argparse.Namespace:
@@ -85,9 +85,9 @@ def main() -> int:
     use_stdin, found_stdin_specifier = is_use_stdin()
 
     if not use_stdin and not found_stdin_specifier:
-        print("command template for argparse")
+        logger.info("CLI tool template for argparse")
     else:
-        print(f"input from stdin: {sys.stdin.read()}")
+        logger.info(f"input from stdin: {sys.stdin.read()}")
 
     return 0
 
