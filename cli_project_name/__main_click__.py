@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 from enum import Enum, auto, unique
 from textwrap import dedent
 from typing import Optional
