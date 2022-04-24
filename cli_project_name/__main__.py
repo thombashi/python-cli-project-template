@@ -1,5 +1,5 @@
 """
-.. codeauthor:: Tsuyoshi Hombashi <tsuyoshi.hombashi@gmail.com>
+.. codeauthor:: NAME <EMAIL>
 """
 
 import argparse
