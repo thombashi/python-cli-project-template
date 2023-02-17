@@ -52,7 +52,10 @@ setuptools.setup(
     },
     python_requires=">=3.7",
     install_requires=INSTALL_REQUIRES,
-    extras_require={"test": TESTS_REQUIRES},
+    extras_require={
+        "test": TESTS_REQUIRES,
+        "profile": ["pyinstrument>=3,<4"],
+    },
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Environment :: Console",
