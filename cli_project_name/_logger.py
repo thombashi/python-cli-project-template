@@ -74,7 +74,7 @@ def initialize_logger(name: str, log_level: str) -> None:
         logger.disable(name)
         return
 
-    if log_level == "DEBUG":
+    if log_level == LogLevel.DEBUG:
         log_format = (
             "<level>{level: <8}</level> | "
             "<cyan>{name}</cyan>:"
