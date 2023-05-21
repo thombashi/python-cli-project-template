@@ -1,9 +1,10 @@
+import enum
 import sys
 
 from ._const import MODULE_NAME
 
 
-class LogLevel:
+class LogLevel(enum.Enum):
     DEBUG = "DEBUG"
     INFO = "INFO"
     QUIET = "QUIET"
@@ -67,7 +68,7 @@ def set_logger(is_enable: bool, propagation_depth: int = 1) -> None:
         logger.disable(MODULE_NAME)
 
 
-def initialize_logger(name: str, log_level: str) -> None:
+def initialize_logger(name: str, log_level: LogLevel) -> None:
     logger.remove()
 
     if log_level == LogLevel.QUIET:
@@ -84,5 +85,5 @@ def initialize_logger(name: str, log_level: str) -> None:
     else:
         log_format = "<level>[{level}]</level> {message}"
 
-    logger.add(sys.stderr, colorize=True, format=log_format, level=log_level)
+    logger.add(sys.stderr, colorize=True, format=log_format, level=log_level.value)
     logger.enable(name)
